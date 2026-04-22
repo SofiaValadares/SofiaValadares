@@ -1,6 +1,7 @@
-<h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&pause=2000&lines=Hi+There!+👋+I'm+Sofia+Valadares!" alt="Typing SVG" />
-</h1>
+<div align="justify">
+    <h1>Sofia Valadares Cavalcanti</h1>
+    <p>Desenvolvimento Full Stack</p>
+</div>
 
 <h3 align="center">
   Welcome to my Github 🇺🇸
