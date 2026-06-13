@@ -39,8 +39,8 @@
 </td>
 <td width="45%" valign="top" align="center">
 
-<!-- Trophies (gerado automaticamente) -->
-<img src="./profile/trophy.svg" alt="GitHub Trophies" width="100%"/>
+<!-- Troféus -->
+<img src="https://github-readme-stats.shion.dev/api?username=SofiaValadares&show_icons=true&theme=dracula&hide_border=true&include_all_commits=true" alt="GitHub Stats" width="100%"/>
 
 </td>
 </tr>
@@ -52,11 +52,7 @@
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SofiaValadares/SofiaValadares/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SofiaValadares/SofiaValadares/output/github-contribution-grid-snake.svg">
-  <img alt="Gráfico de contribuições no GitHub" src="https://raw.githubusercontent.com/SofiaValadares/SofiaValadares/output/github-contribution-grid-snake-dark.svg" width="100%"/>
-</picture>
+<img alt="Gráfico de contribuições no GitHub" src="https://raw.githubusercontent.com/SofiaValadares/SofiaValadares/output/github-contribution-grid-snake-dark.svg" width="100%"/>
 
 </div>
 
@@ -66,8 +62,8 @@
 
 <div align="center">
 
-<img height="170em" src="./profile/stats.svg" alt="GitHub Stats"/>
-<img height="170em" src="./profile/top-langs.svg" alt="Top Languages"/>
+<img height="170em" src="https://github-readme-stats.shion.dev/api?username=SofiaValadares&show_icons=true&theme=dracula&hide_border=true&include_all_commits=true" alt="GitHub Stats"/>
+<img height="170em" src="https://github-readme-stats.shion.dev/api/top-langs/?username=SofiaValadares&layout=compact&langs_count=8&theme=dracula&hide_border=true" alt="Top Languages"/>
 <img height="170em" src="https://streak-stats.demolab.com?user=SofiaValadares&theme=dracula&hide_border=true" alt="GitHub Streak"/>
 
 <br/>
@@ -81,7 +77,7 @@
 ### 📏 Linhas de código · Lines of code
 
 <div align="center">
-<sub>Total de linhas nos repositórios públicos · Total lines across public repositories</sub>
+<sub>Atualizado automaticamente pelo GitHub Actions · Auto-updated by GitHub Actions</sub>
 </div>
 
 <!-- LANGUAGES BREAKDOWN START -->
@@ -109,24 +105,24 @@ Others       --> — lines
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/SofiaValadares/SnakeGame">
-        <img src="./profile/pin-snake-game.svg" alt="Snake Arcade"/>
+        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=SnakeGame&theme=dracula&show_owner=true" alt="Snake Arcade"/>
       </a>
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/SofiaValadares/SENTINELA">
-        <img src="./profile/pin-sentinela.svg" alt="SENTINELA"/>
+        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=SENTINELA&theme=dracula&show_owner=true" alt="SENTINELA"/>
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/SofiaValadares/study-and-grow">
-        <img src="./profile/pin-study-and-grow.svg" alt="Study and Grow"/>
+        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=study-and-grow&theme=dracula&show_owner=true" alt="Study and Grow"/>
       </a>
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/SofiaValadares/PokeGuessTeam">
-        <img src="./profile/pin-poke-guess-team.svg" alt="PokeGuessTeam"/>
+        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=PokeGuessTeam&theme=dracula&show_owner=true" alt="PokeGuessTeam"/>
       </a>
     </td>
   </tr>
