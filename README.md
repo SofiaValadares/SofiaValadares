@@ -218,7 +218,7 @@
   <p class="readme-card__title">GitHub em números</p>
   <table class="readme-stats-table">
     <tr>
-      <td><div class="readme-stat"><span class="readme-stat__value">830</span><span class="readme-stat__label">Contribuições</span></div></td>
+      <td><div class="readme-stat"><span class="readme-stat__value">197</span><span class="readme-stat__label">Contribuições</span></div></td>
       <td><div class="readme-stat"><span class="readme-stat__value">34</span><span class="readme-stat__label">Repositórios</span></div></td>
     </tr>
     <tr>
@@ -274,12 +274,12 @@
   <div class="readme-lang-list">
     <div class="readme-lang">
       <span class="readme-lang__name">Java</span>
-      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:41.3%"></div></div>
+      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:41.4%"></div></div>
       <span class="readme-lang__value">33.707</span>
     </div>
     <div class="readme-lang">
       <span class="readme-lang__name">TypeScript</span>
-      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:36.3%"></div></div>
+      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:36.4%"></div></div>
       <span class="readme-lang__value">29.649</span>
     </div>
     <div class="readme-lang">
