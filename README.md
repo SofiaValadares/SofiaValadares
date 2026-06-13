@@ -62,24 +62,24 @@
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/SofiaValadares/SnakeGame">
-        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=SnakeGame&theme=dracula&show_owner=true" alt="Snake Arcade"/>
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=SofiaValadares&repo=SnakeGame&theme=dracula&show_owner=true&v=2" alt="Snake Arcade"/>
       </a>
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/SofiaValadares/SENTINELA">
-        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=SENTINELA&theme=dracula&show_owner=true" alt="SENTINELA"/>
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=SofiaValadares&repo=SENTINELA&theme=dracula&show_owner=true&v=2" alt="SENTINELA"/>
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/SofiaValadares/study-and-grow">
-        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=study-and-grow&theme=dracula&show_owner=true" alt="Study and Grow"/>
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=SofiaValadares&repo=study-and-grow&theme=dracula&show_owner=true&v=2" alt="Study and Grow"/>
       </a>
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/SofiaValadares/PokeGuessTeam">
-        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=PokeGuessTeam&theme=dracula&show_owner=true" alt="PokeGuessTeam"/>
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=SofiaValadares&repo=PokeGuessTeam&theme=dracula&show_owner=true&v=2" alt="PokeGuessTeam"/>
       </a>
     </td>
   </tr>
