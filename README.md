@@ -84,14 +84,8 @@
 ```
 [ LANGUAGES BREAKDOWN ]
 
-TypeScript   --> — lines
-JavaScript   --> — lines
-Java         --> — lines
-Kotlin       --> — lines
-Python       --> — lines
-Others       --> — lines
-
-[ TOTAL LINES OF CODE: — ]
+Java         --> 33,707 linesTypeScript   --> 29,649 linesJavaScript   --> 5,565 linesKotlin       --> 1,903 linesPython       --> 1,232 linesOthers       --> 9,458 lines
+[ TOTAL LINES OF CODE: 81,514 ]
 ```
 <!-- LANGUAGES BREAKDOWN END -->
 

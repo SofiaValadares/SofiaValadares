@@ -1,0 +1,104 @@
+{"header" : {
+  "cloc_url"           : "github.com/AlDanial/cloc",
+  "cloc_version"       : "1.98",
+  "elapsed_seconds"    : 0.984843969345093,
+  "n_files"            : 1431,
+  "n_lines"            : 98091,
+  "files_per_second"   : 1453.02204668176,
+  "lines_per_second"   : 99600.5489734878,
+  "report_file"        : "../output/cloc-output.json"},
+"Java" :{
+  "nFiles": 548,
+  "blank": 6557,
+  "comment": 1494,
+  "code": 33707},
+"TypeScript" :{
+  "nFiles": 562,
+  "blank": 3357,
+  "comment": 254,
+  "code": 29649},
+"C" :{
+  "nFiles": 151,
+  "blank": 1960,
+  "comment": 177,
+  "code": 6307},
+"JavaScript" :{
+  "nFiles": 60,
+  "blank": 893,
+  "comment": 198,
+  "code": 5565},
+"Kotlin" :{
+  "nFiles": 16,
+  "blank": 96,
+  "comment": 38,
+  "code": 1903},
+"Python" :{
+  "nFiles": 25,
+  "blank": 402,
+  "comment": 292,
+  "code": 1232},
+"Bourne Shell" :{
+  "nFiles": 4,
+  "blank": 106,
+  "comment": 180,
+  "code": 703},
+"Maven" :{
+  "nFiles": 11,
+  "blank": 72,
+  "comment": 9,
+  "code": 695},
+"DOS Batch" :{
+  "nFiles": 5,
+  "blank": 79,
+  "comment": 7,
+  "code": 506},
+"C++" :{
+  "nFiles": 5,
+  "blank": 170,
+  "comment": 13,
+  "code": 416},
+"SQL" :{
+  "nFiles": 3,
+  "blank": 50,
+  "comment": 6,
+  "code": 315},
+"C/C++ Header" :{
+  "nFiles": 13,
+  "blank": 51,
+  "comment": 25,
+  "code": 179},
+"Cucumber" :{
+  "nFiles": 12,
+  "blank": 29,
+  "comment": 0,
+  "code": 175},
+"Gradle" :{
+  "nFiles": 3,
+  "blank": 8,
+  "comment": 1,
+  "code": 82},
+"INI" :{
+  "nFiles": 7,
+  "blank": 4,
+  "comment": 9,
+  "code": 43},
+"Dockerfile" :{
+  "nFiles": 2,
+  "blank": 13,
+  "comment": 0,
+  "code": 21},
+"make" :{
+  "nFiles": 3,
+  "blank": 6,
+  "comment": 0,
+  "code": 16},
+"ProGuard" :{
+  "nFiles": 1,
+  "blank": 3,
+  "comment": 18,
+  "code": 0},
+"SUM": {
+  "blank": 13856,
+  "comment": 2721,
+  "code": 81514,
+  "nFiles": 1431} }
