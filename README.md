@@ -1,9 +1,183 @@
+<style>
+  .readme-card {
+    background: linear-gradient(145deg, #44475a 0%, #282a36 100%);
+    border: 1px solid #6272a4;
+    border-radius: 12px;
+    padding: 16px;
+    color: #f8f8f2;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  .readme-card__title {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #bd93f9;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .readme-stats-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px;
+  }
+  .readme-stats-table td {
+    width: 50%;
+  }
+  .readme-stat {
+    background: rgba(40, 42, 54, 0.75);
+    border: 1px solid #6272a4;
+    border-radius: 10px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .readme-stat__value {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff79c6;
+    line-height: 1.2;
+  }
+  .readme-stat__label {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #8be9fd;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .readme-lang-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .readme-lang {
+    display: grid;
+    grid-template-columns: 92px 1fr 72px;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+  }
+  .readme-lang__name {
+    color: #f8f8f2;
+    font-weight: 600;
+  }
+  .readme-lang__track {
+    height: 8px;
+    background: #282a36;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid #6272a4;
+  }
+  .readme-lang__fill {
+    height: 100%;
+    background: linear-gradient(90deg, #bd93f9 0%, #ff79c6 100%);
+    border-radius: 999px;
+  }
+  .readme-lang__value {
+    color: #8be9fd;
+    font-size: 12px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .readme-total {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #6272a4;
+    text-align: center;
+    font-size: 13px;
+    color: #f8f8f2;
+  }
+  .readme-total strong {
+    color: #50fa7b;
+    font-size: 18px;
+  }
+  .readme-projects-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 14px;
+  }
+  .readme-projects-table td {
+    width: 50%;
+    vertical-align: top;
+  }
+  .readme-project {
+    background: linear-gradient(160deg, #44475a 0%, #282a36 100%);
+    border: 1px solid #6272a4;
+    border-radius: 14px;
+    padding: 16px;
+    color: #f8f8f2;
+    text-align: left;
+    transition: border-color 0.2s ease;
+  }
+  .readme-project:hover {
+    border-color: #bd93f9;
+  }
+  .readme-project__name {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff79c6;
+  }
+  .readme-project__desc {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #d6d6e0;
+  }
+  .readme-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .readme-tag {
+    background: rgba(189, 147, 249, 0.15);
+    border: 1px solid #bd93f9;
+    color: #bd93f9;
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .readme-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .readme-link {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none !important;
+  }
+  .readme-link--demo {
+    background: #bd93f9;
+    color: #282a36 !important;
+  }
+  .readme-link--code {
+    background: transparent;
+    color: #8be9fd !important;
+    border: 1px solid #8be9fd;
+  }
+  @media (max-width: 720px) {
+    .readme-lang {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+    .readme-lang__value {
+      text-align: left;
+    }
+  }
+</style>
+
 <!-- Banner -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:bd93f9,50:6272a4,100:44475a&height=180&section=header&text=Sofia%20Valadares%20Cavalcanti&fontSize=32&fontColor=ffffff&animation=twinkling" width="100%"/>
 
 <div align="center">
 
-<!-- Typing animation -->
 <a href="https://git.io/typing-svg">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3000&pause=900&color=BD93F9&center=true&vCenter=true&width=600&lines=Desenvolvedora+Full+Stack;Angular+%7C+React+%7C+Spring+Boot;Kotlin+%7C+Java+%7C+TypeScript;MVPs+com+impacto+real" alt="Typing animation"/>
 </a>
@@ -24,7 +198,7 @@
 
 <table>
 <tr>
-<td width="55%" valign="top">
+<td width="58%" valign="top">
 
 **PT** — Desenvolvedora Full Stack em Recife, com atuação de ponta a ponta em **front-end** e **back-end**. Já trabalhei em projetos do setor financeiro, marketplaces e outras áreas, usando Angular, React, Kotlin, Java (Spring Boot), TypeScript e Python em squads ágeis. Meu foco está em MVPs, qualidade de código e evolução contínua dos produtos.
 
@@ -37,10 +211,23 @@
 🚀 **Portfólio:** [sofiavcav.dev](https://sofiavcav.dev)
 
 </td>
-<td width="45%" valign="top" align="center">
+<td width="42%" valign="top">
 
-<!-- Troféus -->
-<img src="https://github-readme-stats.shion.dev/api?username=SofiaValadares&show_icons=true&theme=dracula&hide_border=true&include_all_commits=true" alt="GitHub Stats" width="100%"/>
+<!-- PROFILE-STATS START -->
+<div class="readme-card">
+  <p class="readme-card__title">GitHub em números</p>
+  <table class="readme-stats-table">
+    <tr>
+      <td><div class="readme-stat"><span class="readme-stat__value">830</span><span class="readme-stat__label">Contribuições</span></div></td>
+      <td><div class="readme-stat"><span class="readme-stat__value">34</span><span class="readme-stat__label">Repositórios</span></div></td>
+    </tr>
+    <tr>
+      <td><div class="readme-stat"><span class="readme-stat__value">9</span><span class="readme-stat__label">Seguidores</span></div></td>
+      <td><div class="readme-stat"><span class="readme-stat__value">15</span><span class="readme-stat__label">Maior streak</span></div></td>
+    </tr>
+  </table>
+</div>
+<!-- PROFILE-STATS END -->
 
 </td>
 </tr>
@@ -62,7 +249,6 @@
 
 <div align="center">
 
-<img height="170em" src="https://github-readme-stats.shion.dev/api?username=SofiaValadares&show_icons=true&theme=dracula&hide_border=true&include_all_commits=true" alt="GitHub Stats"/>
 <img height="170em" src="https://github-readme-stats.shion.dev/api/top-langs/?username=SofiaValadares&layout=compact&langs_count=8&theme=dracula&hide_border=true" alt="Top Languages"/>
 <img height="170em" src="https://streak-stats.demolab.com?user=SofiaValadares&theme=dracula&hide_border=true" alt="GitHub Streak"/>
 
@@ -80,49 +266,117 @@
 <sub>Atualizado automaticamente pelo GitHub Actions · Auto-updated by GitHub Actions</sub>
 </div>
 
-<!-- LANGUAGES BREAKDOWN START -->
-```
-[ LANGUAGES BREAKDOWN ]
+<br/>
 
-Java         --> 33,707 linesTypeScript   --> 29,649 linesJavaScript   --> 5,565 linesKotlin       --> 1,903 linesPython       --> 1,232 linesOthers       --> 9,458 lines
-[ TOTAL LINES OF CODE: 81,514 ]
-```
+<!-- LANGUAGES BREAKDOWN START -->
+<div class="readme-card">
+  <p class="readme-card__title">Distribuição por linguagem</p>
+  <div class="readme-lang-list">
+    <div class="readme-lang">
+      <span class="readme-lang__name">Java</span>
+      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:41.3%"></div></div>
+      <span class="readme-lang__value">33.707</span>
+    </div>
+    <div class="readme-lang">
+      <span class="readme-lang__name">TypeScript</span>
+      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:36.3%"></div></div>
+      <span class="readme-lang__value">29.649</span>
+    </div>
+    <div class="readme-lang">
+      <span class="readme-lang__name">JavaScript</span>
+      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:6.8%"></div></div>
+      <span class="readme-lang__value">5.565</span>
+    </div>
+    <div class="readme-lang">
+      <span class="readme-lang__name">Kotlin</span>
+      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:2.3%"></div></div>
+      <span class="readme-lang__value">1.903</span>
+    </div>
+    <div class="readme-lang">
+      <span class="readme-lang__name">Python</span>
+      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:1.5%"></div></div>
+      <span class="readme-lang__value">1.232</span>
+    </div>
+    <div class="readme-lang">
+      <span class="readme-lang__name">Outros</span>
+      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:11.6%"></div></div>
+      <span class="readme-lang__value">9.458</span>
+    </div>
+  </div>
+  <div class="readme-total">Total: <strong>81.514</strong> linhas de código</div>
+</div>
 <!-- LANGUAGES BREAKDOWN END -->
 
 ---
 
 ### ⭐ Projetos em destaque · Featured projects
 
-<div align="center">
-
-<table>
+<table class="readme-projects-table">
   <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/SofiaValadares/SnakeGame">
-        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=SnakeGame&theme=dracula&show_owner=true" alt="Snake Arcade"/>
-      </a>
+    <td>
+      <div class="readme-project">
+        <p class="readme-project__name">Snake Arcade</p>
+        <p class="readme-project__desc">Jogo clássico da cobra com visual retro, personalização de cores, recorde persistente e controles para desktop e mobile.</p>
+        <div class="readme-tags">
+          <span class="readme-tag">React</span>
+          <span class="readme-tag">TypeScript</span>
+          <span class="readme-tag">CSS</span>
+        </div>
+        <div class="readme-links">
+          <a class="readme-link readme-link--demo" href="https://snakearcade.sofiavcav.dev/">Demo</a>
+          <a class="readme-link readme-link--code" href="https://github.com/SofiaValadares/SnakeGame">Código</a>
+        </div>
+      </div>
     </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/SofiaValadares/SENTINELA">
-        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=SENTINELA&theme=dracula&show_owner=true" alt="SENTINELA"/>
-      </a>
+    <td>
+      <div class="readme-project">
+        <p class="readme-project__name">SENTINELA</p>
+        <p class="readme-project__desc">Monitoramento ambiental da Caatinga com API em FastAPI para análise de risco de incêndios e focos de queimadas.</p>
+        <div class="readme-tags">
+          <span class="readme-tag">Python</span>
+          <span class="readme-tag">FastAPI</span>
+          <span class="readme-tag">ML</span>
+        </div>
+        <div class="readme-links">
+          <a class="readme-link readme-link--demo" href="https://sentinela-frontend-seven.vercel.app/">Demo</a>
+          <a class="readme-link readme-link--code" href="https://github.com/SofiaValadares/SENTINELA">Código</a>
+        </div>
+      </div>
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/SofiaValadares/study-and-grow">
-        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=study-and-grow&theme=dracula&show_owner=true" alt="Study and Grow"/>
-      </a>
+    <td>
+      <div class="readme-project">
+        <p class="readme-project__name">Study and Grow</p>
+        <p class="readme-project__desc">App de estudos com Pomodoro e gamificação: cada sessão faz a árvore do usuário crescer.</p>
+        <div class="readme-tags">
+          <span class="readme-tag">React</span>
+          <span class="readme-tag">TypeScript</span>
+          <span class="readme-tag">Pomodoro</span>
+        </div>
+        <div class="readme-links">
+          <a class="readme-link readme-link--demo" href="https://studyandgrow.sofiavcav.dev">Demo</a>
+          <a class="readme-link readme-link--code" href="https://github.com/SofiaValadares/study-and-grow">Código</a>
+        </div>
+      </div>
     </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/SofiaValadares/PokeGuessTeam">
-        <img src="https://github-readme-stats.shion.dev/api/pin/?username=SofiaValadares&repo=PokeGuessTeam&theme=dracula&show_owner=true" alt="PokeGuessTeam"/>
-      </a>
+    <td>
+      <div class="readme-project">
+        <p class="readme-project__name">PokeGuessTeam</p>
+        <p class="readme-project__desc">Jogo de dedução de times Pokémon com pistas, placar em tempo real e interface inspirada em Pokédex.</p>
+        <div class="readme-tags">
+          <span class="readme-tag">JavaScript</span>
+          <span class="readme-tag">HTML</span>
+          <span class="readme-tag">CSS</span>
+        </div>
+        <div class="readme-links">
+          <a class="readme-link readme-link--demo" href="https://poke-guess-team.vercel.app/">Demo</a>
+          <a class="readme-link readme-link--code" href="https://github.com/SofiaValadares/PokeGuessTeam">Código</a>
+        </div>
+      </div>
     </td>
   </tr>
 </table>
-
-</div>
 
 ---
 

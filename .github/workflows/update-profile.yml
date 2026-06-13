@@ -21,72 +21,58 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate trophy card
-        continue-on-error: true
-        uses: soulteary/github-profile-trophy-action@v1.0.0
-        with:
-          options: username=${{ github.repository_owner }}&theme=dracula&no-frame=true&row=2&column=3&margin-w=8&margin-h=8
-          path: profile/trophy.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate stats card
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: stats
-          options: username=${{ github.repository_owner }}&show_icons=true&theme=dracula&hide_border=true&include_all_commits=true
-          path: profile/stats.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate top languages card
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: top-langs
-          options: username=${{ github.repository_owner }}&layout=compact&langs_count=8&theme=dracula&hide_border=true
-          path: profile/top-langs.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate Snake Arcade pin
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: pin
-          options: username=${{ github.repository_owner }}&repo=SnakeGame&theme=dracula&show_owner=true
-          path: profile/pin-snake-game.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate SENTINELA pin
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: pin
-          options: username=${{ github.repository_owner }}&repo=SENTINELA&theme=dracula&show_owner=true
-          path: profile/pin-sentinela.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate Study and Grow pin
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: pin
-          options: username=${{ github.repository_owner }}&repo=study-and-grow&theme=dracula&show_owner=true
-          path: profile/pin-study-and-grow.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate PokeGuessTeam pin
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: pin
-          options: username=${{ github.repository_owner }}&repo=PokeGuessTeam&theme=dracula&show_owner=true
-          path: profile/pin-poke-guess-team.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Install dependencies for LOC analysis
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y jq cloc locales
           sudo locale-gen en_US.UTF-8
 
-      - name: Analyze lines of code
+      - name: Update profile stats HTML
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          export LC_ALL=en_US.UTF-8
+          export LANG=en_US.UTF-8
+
+          USER_JSON=$(curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" \
+            "https://api.github.com/users/${{ github.repository_owner }}")
+
+          PUBLIC_REPOS=$(echo "$USER_JSON" | jq -r '.public_repos')
+          FOLLOWERS=$(echo "$USER_JSON" | jq -r '.followers')
+
+          GRAPHQL=$(curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query":"query { user(login: \"'"${{ github.repository_owner }}"'\") { contributionsCollection { totalCommitContributions } } }"}' \
+            https://api.github.com/graphql)
+
+          CONTRIBUTIONS=$(echo "$GRAPHQL" | jq -r '.data.user.contributionsCollection.totalCommitContributions // 0')
+
+          STATS_BLOCK=$(cat <<EOF
+          <div class="readme-card">
+            <p class="readme-card__title">GitHub em números</p>
+            <table class="readme-stats-table">
+              <tr>
+                <td><div class="readme-stat"><span class="readme-stat__value">${CONTRIBUTIONS}</span><span class="readme-stat__label">Contribuições</span></div></td>
+                <td><div class="readme-stat"><span class="readme-stat__value">${PUBLIC_REPOS}</span><span class="readme-stat__label">Repositórios</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="readme-stat"><span class="readme-stat__value">${FOLLOWERS}</span><span class="readme-stat__label">Seguidores</span></div></td>
+                <td><div class="readme-stat"><span class="readme-stat__value">15</span><span class="readme-stat__label">Maior streak</span></div></td>
+              </tr>
+            </table>
+          </div>
+          EOF
+          )
+
+          echo "$STATS_BLOCK" > /tmp/profile-stats.html
+          sed -i '/<!-- PROFILE-STATS START -->/,/<!-- PROFILE-STATS END -->/{
+            //!d
+            /<!-- PROFILE-STATS START -->/r /tmp/profile-stats.html
+          }' README.md
+
+      - name: Update lines of code HTML
         run: |
           set -euo pipefail
           export LC_ALL=en_US.UTF-8
@@ -114,53 +100,71 @@ jobs:
           cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
 
           cd ..
-          TOTAL_LINES=$(jq '.SUM.code // 0' output/cloc-output.json)
-          OTHER_LINES=0
-          FORMATTED_BREAKDOWN=""
-          HL=",$(echo "$HIGHLIGHT_LANGS" | tr -d ' '),"
+          python3 <<'PY'
+          import json, os
 
-          while read -r entry; do
-            LANG=$(echo "$entry" | jq -r '.lang')
-            LINES=$(echo "$entry" | jq -r '.lines')
+          with open("output/cloc-output.json") as f:
+              data = json.load(f)
 
-            if [[ "$HL" == *",$LANG,"* ]]; then
-              FORMATTED=$(printf "%'d" "$LINES")
-              FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "$LANG" "$FORMATTED")
-            else
-              OTHER_LINES=$((OTHER_LINES + LINES))
-            fi
-          done < <(
-            jq -c 'to_entries
-              | map(select(.key != "header" and .key != "SUM"))
-              | map({lang: .key, lines: .value.code})
-              | map(select(.lines > 0))
-              | .[]' output/cloc-output.json
-          )
+          highlight = [x.strip() for x in os.environ["HIGHLIGHT_LANGS"].split(",")]
+          total = data.get("SUM", {}).get("code", 0) or 0
+          rows = []
+          others = 0
 
-          if [[ $OTHER_LINES -gt 0 ]]; then
-            FORMATTED_OTHER=$(printf "%'d" "$OTHER_LINES")
-            FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "Others" "$FORMATTED_OTHER")
-          fi
+          for lang, info in data.items():
+              if lang in ("header", "SUM"):
+                  continue
+              lines = info.get("code", 0)
+              if lines <= 0:
+                  continue
+              if lang in highlight:
+                  rows.append((lang, lines))
+              else:
+                  others += lines
 
-          FORMATTED_TOTAL=$(printf "%'d" "$TOTAL_LINES")
-          CODE_BLOCK="\`\`\`
-          [ LANGUAGES BREAKDOWN ]
+          rows.sort(key=lambda item: item[1], reverse=True)
+          if others > 0:
+              rows.append(("Outros", others))
 
-          ${FORMATTED_BREAKDOWN}
-          [ TOTAL LINES OF CODE: ${FORMATTED_TOTAL} ]
-          \`\`\`"
+          def fmt(n: int) -> str:
+              return f"{n:,}".replace(",", ".")
 
-          echo "$CODE_BLOCK" > temp_block.txt
+          parts = [
+              '<div class="readme-card">',
+              '  <p class="readme-card__title">Distribuição por linguagem</p>',
+              '  <div class="readme-lang-list">',
+          ]
+
+          for lang, lines in rows:
+              width = round((lines / total) * 100, 1) if total else 0
+              label = "Outros" if lang == "Others" else lang
+              parts.extend([
+                  '    <div class="readme-lang">',
+                  f'      <span class="readme-lang__name">{label}</span>',
+                  '      <div class="readme-lang__track"><div class="readme-lang__fill" style="width:' + str(width) + '%"></div></div>',
+                  f'      <span class="readme-lang__value">{fmt(lines)}</span>',
+                  '    </div>',
+              ])
+
+          parts.extend([
+              '  </div>',
+              f'  <div class="readme-total">Total: <strong>{fmt(total)}</strong> linhas de código</div>',
+              '</div>',
+          ])
+
+          with open("/tmp/languages-breakdown.html", "w") as f:
+              f.write("\n".join(parts) + "\n")
+          PY
+
           sed -i '/<!-- LANGUAGES BREAKDOWN START -->/,/<!-- LANGUAGES BREAKDOWN END -->/{
             //!d
-            /<!-- LANGUAGES BREAKDOWN START -->/r temp_block.txt
+            /<!-- LANGUAGES BREAKDOWN START -->/r /tmp/languages-breakdown.html
           }' README.md
-          rm temp_block.txt
 
       - name: Commit and push updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md profile/ output/cloc-output.json
-          git diff --staged --quiet || git commit -m "chore: update profile stats, LOC and cards"
+          git add README.md output/cloc-output.json
+          git diff --staged --quiet || git commit -m "chore: update profile HTML stats and LOC"
           git push origin HEAD:main
