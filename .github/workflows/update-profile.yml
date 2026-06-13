@@ -1,0 +1,154 @@
+name: Update Profile README
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    env:
+      HIGHLIGHT_LANGS: 'Java,TypeScript,JavaScript,Kotlin,Python'
+      IGNORE_LANGS: 'JSON,HTML,CSS,SCSS,Sass,Markdown,SVG,XML,YAML,TOML,CSV,Text,Properties'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate trophy card
+        uses: soulteary/github-profile-trophy-action@v1.0.0
+        with:
+          options: username=${{ github.repository_owner }}&theme=dracula&no-frame=true&row=2&column=3&margin-w=8&margin-h=8
+          path: profile/trophy.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&theme=dracula&hide_border=true&include_all_commits=true
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate top languages card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=8&theme=dracula&hide_border=true
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Snake Arcade pin
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: pin
+          options: username=${{ github.repository_owner }}&repo=SnakeGame&theme=dracula&show_owner=true
+          path: profile/pin-snake-game.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate SENTINELA pin
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: pin
+          options: username=${{ github.repository_owner }}&repo=SENTINELA&theme=dracula&show_owner=true
+          path: profile/pin-sentinela.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Study and Grow pin
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: pin
+          options: username=${{ github.repository_owner }}&repo=study-and-grow&theme=dracula&show_owner=true
+          path: profile/pin-study-and-grow.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate PokeGuessTeam pin
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: pin
+          options: username=${{ github.repository_owner }}&repo=PokeGuessTeam&theme=dracula&show_owner=true
+          path: profile/pin-poke-guess-team.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install dependencies for LOC analysis
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq cloc locales
+          sudo locale-gen en_US.UTF-8
+
+      - name: Analyze lines of code
+        run: |
+          set -euo pipefail
+          export LC_ALL=en_US.UTF-8
+          export LANG=en_US.UTF-8
+
+          mkdir -p public-repos output
+          cd public-repos
+
+          REPOS=$(curl -fsSL \
+            "https://api.github.com/users/${{ github.repository_owner }}/repos?per_page=100&type=owner" \
+            | jq -r '.[] | select(.fork == false) | .full_name')
+
+          for REPO in $REPOS; do
+            DEFAULT_BRANCH=$(curl -fsSL "https://api.github.com/repos/$REPO" | jq -r '.default_branch')
+            git clone --quiet --branch "$DEFAULT_BRANCH" --single-branch \
+              "https://github.com/${REPO}.git" "$(basename "$REPO")" || true
+          done
+
+          cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
+
+          cd ..
+          TOTAL_LINES=$(jq '.SUM.code // 0' output/cloc-output.json)
+          OTHER_LINES=0
+          FORMATTED_BREAKDOWN=""
+          HL=",$(echo "$HIGHLIGHT_LANGS" | tr -d ' '),"
+
+          while read -r entry; do
+            LANG=$(echo "$entry" | jq -r '.lang')
+            LINES=$(echo "$entry" | jq -r '.lines')
+
+            if [[ "$HL" == *",$LANG,"* ]]; then
+              FORMATTED=$(printf "%'d" "$LINES")
+              FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "$LANG" "$FORMATTED")
+            else
+              OTHER_LINES=$((OTHER_LINES + LINES))
+            fi
+          done < <(
+            jq -c 'to_entries
+              | map(select(.key != "header" and .key != "SUM"))
+              | map({lang: .key, lines: .value.code})
+              | map(select(.lines > 0))
+              | .[]' output/cloc-output.json
+          )
+
+          if [[ $OTHER_LINES -gt 0 ]]; then
+            FORMATTED_OTHER=$(printf "%'d" "$OTHER_LINES")
+            FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "Others" "$FORMATTED_OTHER")
+          fi
+
+          FORMATTED_TOTAL=$(printf "%'d" "$TOTAL_LINES")
+          CODE_BLOCK="\`\`\`
+          [ LANGUAGES BREAKDOWN ]
+
+          ${FORMATTED_BREAKDOWN}
+          [ TOTAL LINES OF CODE: ${FORMATTED_TOTAL} ]
+          \`\`\`"
+
+          echo "$CODE_BLOCK" > temp_block.txt
+          sed -i '/<!-- LANGUAGES BREAKDOWN START -->/,/<!-- LANGUAGES BREAKDOWN END -->/{
+            //!d
+            /<!-- LANGUAGES BREAKDOWN START -->/r temp_block.txt
+          }' README.md
+          rm temp_block.txt
+
+      - name: Commit and push updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md profile/*.svg output/cloc-output.json
+          git commit -m "chore: update profile stats, LOC and cards" || exit 0
+          git push

@@ -1,70 +1,169 @@
-<div align="justify">
-  <h1>Sofia Valadares Cavalcanti</h1>
-  <p><strong>Full Stack Developer</strong> | Recife, Pernambuco - Brazil</p>
-
-  <p>
-  Desenvolvedora Full Stack com perfil multidisciplinar e orientação a resultados, atuando na criação de MVPs e projetos de inovação.
-  Experiência no desenvolvimento de aplicações escaláveis de ponta a ponta, utilizando tecnologias como Angular, React, Kotlin e Java (Spring Boot), com atuação em squads ágeis e visão sistêmica do produto — do front-end ao back-end.
-  Foco em qualidade de código, boas práticas de engenharia de software e evolução contínua das aplicações.
-  </p>
-
-  <p>
-  <strong>EN</strong><br/>
-  Full Stack Developer with a multidisciplinary profile and strong results-driven mindset, focused on building MVPs and innovative solutions.
-  Experience in developing scalable end-to-end applications using technologies such as Angular, React, Kotlin and Java (Spring Boot), working in agile squads with a systemic view of the product — from front-end to back-end.
-  Focused on code quality, software engineering best practices and continuous improvement.
-  </p>
-
-  <p>
-  📌 <strong>Portfólio / Portfolio:</strong> (em breve / coming soon)
-  </p>
-</div>
+<!-- Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:bd93f9,50:6272a4,100:44475a&height=180&section=header&text=Sofia%20Valadares%20Cavalcanti&fontSize=32&fontColor=ffffff&animation=twinkling" width="100%"/>
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=java,spring,react,typescript,javascript,html,css,mysql,postgresql,docker,git" />
+
+<!-- Typing animation -->
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3000&pause=900&color=BD93F9&center=true&vCenter=true&width=600&lines=Desenvolvedora+Full+Stack;Angular+%7C+React+%7C+Spring+Boot;Kotlin+%7C+Java+%7C+TypeScript;MVPs+com+impacto+real" alt="Typing animation"/>
+</a>
+
+<br/><br/>
+
+<img src="https://skillicons.dev/icons?i=java,spring,kotlin,react,angular,typescript,javascript,python,html,css,postgresql,docker,git" />
+
+<br/><br/>
+
+**Recife, Pernambuco — Brazil** · 🇧🇷
+
 </div>
 
 ---
 
-<div align="center">
-  <p><strong>📊 GITHUB STATUS</strong></p>
-</div>
+### 👩‍💻 Sobre mim · About me
 
-<table align="center">
-  <tr>
-    <td align="center">
-      <img height="165em" src="https://github-readme-stats.vercel.app/api?username=SofiaValadares&show_icons=true&theme=dracula&count_private=true"/><br/>
-      <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SofiaValadares&layout=compact&langs_count=8&theme=dracula"/>
-    </td>
-    <td align="center">
-      <img height="165em" src="https://streak-stats.demolab.com?user=SofiaValadares&theme=dracula&hide_border=true"/><br/>
-      <img height="165em" src="https://github-readme-activity-graph.vercel.app/graph?username=SofiaValadares&theme=dracula"/>
-    </td>
-  </tr>
+<table>
+<tr>
+<td width="55%" valign="top">
+
+**PT** — Desenvolvedora Full Stack em Recife, com atuação de ponta a ponta em **front-end** e **back-end**. Já trabalhei em projetos do setor financeiro, marketplaces e outras áreas, usando Angular, React, Kotlin, Java (Spring Boot), TypeScript e Python em squads ágeis. Meu foco está em MVPs, qualidade de código e evolução contínua dos produtos.
+
+<br/>
+
+**EN** — Full Stack Developer based in Recife, working end-to-end on **front-end** and **back-end**. I've built solutions for the financial sector, marketplaces and other domains with Angular, React, Kotlin, Java (Spring Boot), TypeScript and Python in agile squads, with a focus on MVPs, code quality and continuous improvement.
+
+<br/>
+
+🚀 **Portfólio:** [sofiavcav.dev](https://sofiavcav.dev)
+
+</td>
+<td width="45%" valign="top" align="center">
+
+<!-- Trophies (gerado automaticamente) -->
+<img src="./profile/trophy.svg" alt="GitHub Trophies" width="100%"/>
+
+</td>
+</tr>
 </table>
 
 ---
 
+### 📊 Meus commits · My commits
 
 <div align="center">
-<p><strong>📬 CONTATO | CONTACT </strong></p>
-<a href="https://github.com/SofiaValadares">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SofiaValadares/SofiaValadares/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SofiaValadares/SofiaValadares/output/github-contribution-grid-snake.svg">
+  <img alt="Gráfico de contribuições no GitHub" src="https://raw.githubusercontent.com/SofiaValadares/SofiaValadares/output/github-contribution-grid-snake-dark.svg" width="100%"/>
+</picture>
+
+</div>
+
+---
+
+### 📈 Atividade no GitHub · GitHub activity
+
+<div align="center">
+
+<img height="170em" src="./profile/stats.svg" alt="GitHub Stats"/>
+<img height="170em" src="./profile/top-langs.svg" alt="Top Languages"/>
+<img height="170em" src="https://streak-stats.demolab.com?user=SofiaValadares&theme=dracula&hide_border=true" alt="GitHub Streak"/>
+
+<br/>
+
+<img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=SofiaValadares&theme=dracula&hide_border=true&area=true&custom_title=Atividade%20de%20contribui%C3%A7%C3%A3o" alt="Contribution Graph"/>
+
+</div>
+
+---
+
+### 📏 Linhas de código · Lines of code
+
+<div align="center">
+<sub>Total de linhas nos repositórios públicos · Total lines across public repositories</sub>
+</div>
+
+<!-- LANGUAGES BREAKDOWN START -->
+```
+[ LANGUAGES BREAKDOWN ]
+
+TypeScript   --> — lines
+JavaScript   --> — lines
+Java         --> — lines
+Kotlin       --> — lines
+Python       --> — lines
+Others       --> — lines
+
+[ TOTAL LINES OF CODE: — ]
+```
+<!-- LANGUAGES BREAKDOWN END -->
+
+---
+
+### ⭐ Projetos em destaque · Featured projects
+
+<div align="center">
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://github.com/SofiaValadares/SnakeGame">
+        <img src="./profile/pin-snake-game.svg" alt="Snake Arcade"/>
+      </a>
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://github.com/SofiaValadares/SENTINELA">
+        <img src="./profile/pin-sentinela.svg" alt="SENTINELA"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://github.com/SofiaValadares/study-and-grow">
+        <img src="./profile/pin-study-and-grow.svg" alt="Study and Grow"/>
+      </a>
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://github.com/SofiaValadares/PokeGuessTeam">
+        <img src="./profile/pin-poke-guess-team.svg" alt="PokeGuessTeam"/>
+      </a>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+---
+
+### 📬 Contato · Contact
+
+<div align="center">
+
+<a href="https://sofiavcav.dev">
+  <img src="https://img.shields.io/badge/🌐_Portfólio-sofiavcav.dev-bd93f9?style=for-the-badge&logo=vercel&logoColor=white"/>
 </a>
 <a href="https://www.linkedin.com/in/sofia-v-cavalcanti/">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white"/>
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+<a href="https://github.com/SofiaValadares">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 <a href="mailto:sofiav.cav@gmail.com">
-  <img src="https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
 </a>
-<a href="#">
-  <img src="https://img.shields.io/badge/Portfolio-000000?style=flat&logo=vercel&logoColor=white"/>
+
+<br/><br/>
+
+<a href="https://sofiavcav.dev/curriculo/Curriculo-PTBR.pdf">
+  <img src="https://img.shields.io/badge/📄_Currículo_PT--BR-4CAF50?style=for-the-badge"/>
 </a>
-<a href="#">
-  <img src="https://img.shields.io/badge/CV_PT(BR)-4CAF50?style=flat&logo=readthedocs&logoColor=white"/>
+<a href="https://sofiavcav.dev/curriculo/Curriculo-EN.pdf">
+  <img src="https://img.shields.io/badge/📄_Resume_EN-2E7D32?style=for-the-badge"/>
 </a>
-<a href="#">
-  <img src="https://img.shields.io/badge/CV_EN-2E7D32?style=flat&logo=readthedocs&logoColor=white"/>
-</a>
+
+<br/><br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:bd93f9,50:6272a4,100:44475a&height=100&section=footer&text=Obrigada%20pela%20visita!%20%E2%9C%A8&fontSize=20&fontColor=ffffff" width="100%"/>
 
 </div>
