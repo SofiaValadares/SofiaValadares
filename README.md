@@ -54,29 +54,6 @@
 
 ---
 
-### 📏 Linhas de código · Lines of code
-
-<div align="center">
-<sub>Atualizado automaticamente pelo GitHub Actions · Auto-updated by GitHub Actions</sub>
-</div>
-
-<!-- LANGUAGES BREAKDOWN START -->
-```
-[ LANGUAGES BREAKDOWN ]
-
-Java         --> 33.707 lines
-TypeScript   --> 29.649 lines
-JavaScript   --> 5.565 lines
-Kotlin       --> 1.903 lines
-Python       --> 1.232 lines
-Outros       --> 9.458 lines
-
-[ TOTAL LINES OF CODE: 81.514 ]
-```
-<!-- LANGUAGES BREAKDOWN END -->
-
----
-
 ### ⭐ Projetos em destaque · Featured projects
 
 <div align="center">
