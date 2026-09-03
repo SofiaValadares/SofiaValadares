@@ -1,11 +1,11 @@
 {"header" : {
   "cloc_url"           : "github.com/AlDanial/cloc",
   "cloc_version"       : "1.98",
-  "elapsed_seconds"    : 0.397145986557007,
-  "n_files"            : 1185,
-  "n_lines"            : 77497,
-  "files_per_second"   : 2983.78943791719,
-  "lines_per_second"   : 195134.793308244,
+  "elapsed_seconds"    : 0.665701150894165,
+  "n_files"            : 1187,
+  "n_lines"            : 79187,
+  "files_per_second"   : 1783.08239125865,
+  "lines_per_second"   : 118952.776172366,
   "report_file"        : "../output/cloc-output.json"},
 "TypeScript" :{
   "nFiles": 457,
@@ -27,6 +27,11 @@
   "blank": 887,
   "comment": 184,
   "code": 5507},
+"SQL" :{
+  "nFiles": 4,
+  "blank": 64,
+  "comment": 10,
+  "code": 2014},
 "Kotlin" :{
   "nFiles": 16,
   "blank": 96,
@@ -41,12 +46,12 @@
   "nFiles": 11,
   "blank": 66,
   "comment": 9,
-  "code": 657},
+  "code": 665},
 "Jupyter Notebook" :{
   "nFiles": 1,
   "blank": 0,
-  "comment": 1833,
-  "code": 584},
+  "comment": 1765,
+  "code": 610},
 "Bourne Shell" :{
   "nFiles": 3,
   "blank": 81,
@@ -62,11 +67,6 @@
   "blank": 64,
   "comment": 7,
   "code": 375},
-"SQL" :{
-  "nFiles": 2,
-  "blank": 49,
-  "comment": 6,
-  "code": 309},
 "C/C++ Header" :{
   "nFiles": 13,
   "blank": 51,
@@ -103,7 +103,7 @@
   "comment": 18,
   "code": 0},
 "SUM": {
-  "blank": 10433,
-  "comment": 3920,
-  "code": 63144,
-  "nFiles": 1185} }
+  "blank": 10448,
+  "comment": 3856,
+  "code": 64883,
+  "nFiles": 1187} }
