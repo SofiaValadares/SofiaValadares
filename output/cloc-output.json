@@ -1,11 +1,11 @@
 {"header" : {
   "cloc_url"           : "github.com/AlDanial/cloc",
   "cloc_version"       : "1.98",
-  "elapsed_seconds"    : 0.879093885421753,
-  "n_files"            : 1339,
-  "n_lines"            : 95193,
-  "files_per_second"   : 1523.1592691122,
-  "lines_per_second"   : 108285.362438086,
+  "elapsed_seconds"    : 0.926921844482422,
+  "n_files"            : 1363,
+  "n_lines"            : 98398,
+  "files_per_second"   : 1470.45838666266,
+  "lines_per_second"   : 106155.659817192,
   "report_file"        : "../output/cloc-output.json"},
 "TypeScript" :{
   "nFiles": 487,
@@ -18,20 +18,20 @@
   "comment": 1218,
   "code": 25259},
 "Python" :{
-  "nFiles": 55,
-  "blank": 1163,
-  "comment": 374,
-  "code": 6474},
+  "nFiles": 69,
+  "blank": 1426,
+  "comment": 395,
+  "code": 8495},
 "C" :{
   "nFiles": 151,
   "blank": 1960,
   "comment": 177,
   "code": 6307},
 "JavaScript" :{
-  "nFiles": 57,
-  "blank": 887,
-  "comment": 184,
-  "code": 5507},
+  "nFiles": 61,
+  "blank": 956,
+  "comment": 187,
+  "code": 6206},
 "SQL" :{
   "nFiles": 5,
   "blank": 65,
@@ -77,21 +77,26 @@
   "blank": 29,
   "comment": 0,
   "code": 175},
+"PowerShell" :{
+  "nFiles": 5,
+  "blank": 13,
+  "comment": 0,
+  "code": 88},
 "Gradle" :{
   "nFiles": 3,
   "blank": 8,
   "comment": 1,
   "code": 82},
+"Dockerfile" :{
+  "nFiles": 3,
+  "blank": 23,
+  "comment": 3,
+  "code": 50},
 "INI" :{
   "nFiles": 7,
   "blank": 4,
   "comment": 9,
   "code": 43},
-"Dockerfile" :{
-  "nFiles": 2,
-  "blank": 16,
-  "comment": 3,
-  "code": 29},
 "make" :{
   "nFiles": 3,
   "blank": 6,
@@ -103,7 +108,7 @@
   "comment": 18,
   "code": 0},
 "SUM": {
-  "blank": 12640,
-  "comment": 2647,
-  "code": 79906,
-  "nFiles": 1339} }
+  "blank": 12992,
+  "comment": 2671,
+  "code": 82735,
+  "nFiles": 1363} }
